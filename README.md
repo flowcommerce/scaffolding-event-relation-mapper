@@ -1,1 +1,0 @@
-# scaffolding-event-relation-mapper
