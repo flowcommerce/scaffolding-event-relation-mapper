@@ -1,4 +1,4 @@
-package db.organization
+package db.erm.organization
 
 import io.flow.organization.event.v0.models.OrganizationUpsertedV2
 import io.flow.common.v0.models._
