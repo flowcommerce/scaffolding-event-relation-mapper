@@ -1,6 +1,6 @@
 package helpers
 
-import db.organization.OrganizationsDao
+import db.erm.organization.OrganizationsDao
 import io.flow.common.v0.mock.Factories
 import io.flow.common.v0.models.{Organization, OrganizationDefaults, OrganizationReference}
 import io.flow.test.utils.FlowPlaySpec
@@ -8,7 +8,7 @@ import io.flow.test.utils.FlowPlaySpec
 trait OrganizationHelpers {
   this: FlowPlaySpec =>
 
-  def organizationsDao: OrganizationsDao = init[db.organization.OrganizationsDao]
+  def organizationsDao: OrganizationsDao = init[OrganizationsDao]
 
   def createOrganization(
     organization: Organization = makeOrganization()
