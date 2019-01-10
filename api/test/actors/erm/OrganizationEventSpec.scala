@@ -1,6 +1,5 @@
 package actors.erm
 
-import db.erm.organization.OrganizationsDao
 import io.flow.organization.event.v0.mock.Factories
 import io.flow.organization.event.v0.models.OrganizationEvent
 import io.flow.organization.event.v0.models.json._
@@ -15,7 +14,6 @@ class OrganizationEventSpec extends FlowPlaySpec
 {
 
   private[this] implicit val ec = ExecutionContext.global
-  private[this] def organizationsDao: OrganizationsDao = init[OrganizationsDao]
   private[this] lazy val producer = ermQueue.producer[OrganizationEvent]()
 
   private[this] def testEvents[U <: OrganizationEvent, V <: OrganizationEvent](
