@@ -1,4 +1,4 @@
-package helpers
+package helpers.erm
 
 import db.erm.organization.OrganizationsDao
 import io.flow.common.v0.mock.Factories

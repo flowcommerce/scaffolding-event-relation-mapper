@@ -10,8 +10,8 @@ import org.scalatest.Assertion
 import scala.concurrent.ExecutionContext
 
 class OrganizationEventSpec extends FlowPlaySpec
-  with helpers.ErmHelpers
-  with helpers.OrganizationHelpers
+  with helpers.erm.ErmHelpers
+  with helpers.erm.OrganizationHelpers
 {
 
   private[this] implicit val ec = ExecutionContext.global

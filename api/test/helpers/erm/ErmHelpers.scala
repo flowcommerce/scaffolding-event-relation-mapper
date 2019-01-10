@@ -1,4 +1,4 @@
-package helpers
+package helpers.erm
 
 import io.flow.event.relation.mapper.ErmQueue
 import io.flow.test.utils.FlowPlaySpec
