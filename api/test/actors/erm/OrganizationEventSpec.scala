@@ -6,14 +6,11 @@ import io.flow.organization.event.v0.models.json._
 import io.flow.test.utils.FlowPlaySpec
 import org.scalatest.Assertion
 
-import scala.concurrent.{ExecutionContext, ExecutionContextExecutor}
-
 class OrganizationEventSpec extends FlowPlaySpec
   with helpers.erm.ErmHelpers
   with helpers.erm.OrganizationHelpers
 {
 
-  private[this] implicit val ec: ExecutionContextExecutor = ExecutionContext.global
   private[this] lazy val producer = ermQueue.producer[OrganizationEvent]()
 
   private[this] def testEvents[U <: OrganizationEvent, V <: OrganizationEvent](
