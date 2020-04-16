@@ -13,10 +13,10 @@ class OrganizationEventSpec extends FlowPlaySpec
 
   private[this] lazy val producer = ermQueue.producer[OrganizationEvent]()
 
-  private[this] def testEvents[U <: OrganizationEvent, V <: OrganizationEvent](
+  private[this] def testEvents(
     findByPrimaryKey: => Option[Any],
-    upserted: U,
-    deleted: V
+    upserted: OrganizationEvent,
+    deleted: OrganizationEvent,
   ): Assertion = {
     producer.publish(upserted)
     eventuallyInNSeconds() {
