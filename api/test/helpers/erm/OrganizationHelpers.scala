@@ -19,20 +19,13 @@ trait OrganizationHelpers {
 
   def makeOrganization(
     id: String = createTestId(),
-    parentId: Option[String] = None
+    parentId: Option[String] = None,
+    defaults: Option[OrganizationDefaults] = None
   ): Organization = {
     Factories.makeOrganization().copy(
       id = id,
       parent = parentId.map(OrganizationReference),
-      defaults = Some(
-        OrganizationDefaults(
-          baseCurrency = "USD",
-          country = "USA",
-          locale = "en-US",
-          language = "en",
-          timezone = "America/New_York"
-        )
-      )
+      defaults = defaults
     )
   }
 
